@@ -1,0 +1,22 @@
+.select {
+  border: 0px solid #1a1a1a;
+  padding: 1rem;
+  margin: 1rem 0;
+  height: 1rem 0;
+}
+
+.select h1 {
+  color: #004120;
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.select p {
+  margin: 0.25rem 0;
+  font-size: 1.5rem;
+}
+
+.select__output {
+  font-weight: bold;
+  color: #1a1a1a;
+}

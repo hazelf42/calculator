@@ -1,17 +1,36 @@
 .summary {
-  border: 1px solid #1a1a1a;
-  padding: 1rem;
-  margin: 1rem 0;
+  border: 0px solid #88e988;
 }
 
 .summary h1 {
-  color: #1a1a1a;
+  color: #2b2b2b;
   font-size: 1.5rem;
-  margin: 0.25rem 0;
+  padding: 0.25rem;
+  font-weight: 600
+}
+.summaryRow{
+  padding: 1rem;
+  background-color:#fff;
+  border-radius: 10px;
+  margin: 1rem;
 }
 
 .summary p {
-  margin: 0.25rem 0;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+.summary h4 {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+
+}
+.summary h3 {
+  color: 'red';
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .summary__output {
