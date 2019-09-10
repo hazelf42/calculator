@@ -2,13 +2,118 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Gameplay";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Gameplay"), local("Gameplay"),
+    url("./assets/Gameplay.ttf") format("truetype");
+}
+
 body {
   font-family: sans-serif;
   margin: 5rem;
-  background-color: #F2F2F2
+  background-image: url("./assets/image.jpg");
 }
-.header {
-  height:50px;
+.padding { 
+  margin: 0 5%;
+}
+.resultsscreen  {
+  background-color: white;
+  border-radius: 10px;
+  margin:3%
+}
+
+.wanna-observe {
+  background-color: aliceblue;
+  font-family: "Gameplay";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  margin: 5%;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.animalbutton {
+  margin: 10px;
+  background-color: rgba(240, 240, 240);
+}
+
+.avatar {
+  width: auto;
+  height: 170px;
+  display: block;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+}
+
+.classavatar {
+  width: auto;
+  height: 170px;
+  display: block;
+  justify-content: space-around;
+  margin: 0 auto;
+  display: block;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+.header-lg {
+  font-size: 35px;
+  font-weight: 400;
+  margin: 20px;
+  font-family: "Gameplay";
+}
+.header-md {
+  top: 25px;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 20px;
+  font-family: "Gameplay";
+}
+.robot {
+  float: bottom;
+  position: relative;
+  top: 10px;
+  font-size: "50px";
+  font-family: "Gameplay";
+  color: black
+}
+
+.robot-polygon {
+  float: bottom;
+  position: relative;
+  font-size: "60px";
+  font-family: "Gameplay";
+  text-decoration: underline;
+  color: #1660FF
+}
+.robot-header {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 50px;
+  margin: 0 auto;
+  font-family: "Gameplay";
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-right {
+  float:right;
+  right: 30px;
+  justify-content: right;
+  align-items: right;
 }
 .header img {
   float: left;
@@ -21,5 +126,5 @@ body {
   top: 10px;
   left: 10px;
   font-size: 1.1rem;
-  font-family: 'Courier New', Courier, monospace
+  font-family: "Courier New", Courier, monospace;
 }
