@@ -61,7 +61,7 @@ const App = props => {
             href="https://www.youtube.com/watch?v=9Jcxc-ddWKI"
             className="robot-polygon flex-center"
           >
-            Inspired
+            Inspired by Polygon and BDG
           </a>
 
           <ul className="grid space-around">
