@@ -26,17 +26,16 @@ const Summary = props => {
             <a href="/about" style={{fontSize:12, margin: "0 7.5%"}}>How is this calculated?</a>
       <Container>
         <Row className="summaryRow">
-          <Col xs={2}>
+          <Col md={2}>
             <FaIndustry color="grey" size={50} />
           </Col>
-          <Col xs={10}>
+          <Col md={10}>
             <Row><Col>
             <h3 className="summary">
               CO2 saved: 
               <span className="summary__output">
                 {roundToTwo(props.carbon)}
-              </span>
-              lbs CO2/year
+              </span> lbs CO2/year
             </h3></Col>
             <Col xs={2}><p>
                 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4372775/">
