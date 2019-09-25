@@ -100,7 +100,7 @@ const App = props => {
         }}
     />
       <FrequencyPicker
-        selectedUnit={selectedUnit}c
+        selectedUnit={selectedUnit}
         selectedFrequency={selectedFrequency}
         onFrequencySelect={frequencySelectHandler}
       />
