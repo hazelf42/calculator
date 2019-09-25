@@ -32,21 +32,20 @@ const Diet = props => {
   }
   function dietToH2o(diet){
 
-    let regular = 1320 //Medium consumption
-    let pesc = 950.4
-    let med  = 1188 //not accurate, use for now
-    let veg = 831
-    let vegan = 792
+    let pesc = .28
+    let med  = .10 //not accurate, use for now
+    let veg = .37
+    let vegan = .40
     //https://www.ncbi.nlm.nih.gov/pubmed/27812156    //Should be a switch statement but I am so tired
 
     if (diet === "Vegetarian") {
-      return Math.round(regular - veg);
+      return 3000*(veg);
     } else if (diet === "Vegan") {
-      return regular - vegan;
+      return 3000*(vegan);
     } else if (diet === "Pescetarian") {
-      return regular - pesc;
+      return 3000*(pesc)
     } else if (diet.split(" ")[0] === "Mediterrenean") {
-      return regular - med;
+      return 3000*(med);
     } else {
       return 0;
     }
@@ -55,7 +54,7 @@ const Diet = props => {
 
     let regular = 2.549 //Medium consumption
     let pesc = 1.55
-    let med  = 1.891 //not accurate, use for now
+    let med  = 1.891 
     let veg = 1.249
     let vegan = 1.147
     //Src https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0200781	
