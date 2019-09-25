@@ -23,6 +23,7 @@ const Summary = props => {
   const cars = (props.carbon / 1000) * 1109;
   return (
     <div className="summary">
+            <a href="/about" style={{fontSize:12, margin: "0 7.5%"}}>How is this calculated?</a>
       <Container>
         <Row className="summaryRow">
           <Col xs={2}>
@@ -60,8 +61,7 @@ const Summary = props => {
           <i>
             <b>Did you know?</b>
           </i>
-           Animal agriculture creates
-          more CO2 emissions than the entire transportation industry -- that's cars, trucks, trains, and planes.
+           Animal agriculture creates more CO2 emissions than the entire transportation industry - that's cars, trucks, trains, and planes.
         </h4>
         <Row className="summaryRow">
           <Col xs={2}>
@@ -95,7 +95,7 @@ const Summary = props => {
           <i>
             <b>Did you know? </b>
           </i>
-          About 1/3 of the world's fresh water is used for livestock.
+          (Conservatively!) About 1/3 of the world's fresh water is used for livestock.
         </h4>
         <Row className="summaryRow">
           <Col xs={2}>
@@ -136,7 +136,6 @@ const Summary = props => {
           cattle farming.
         </h4>
       </Container>
-          
     </div>
   );
 };
