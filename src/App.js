@@ -99,6 +99,7 @@ const App = props => {
             margin: 20
         }}
     />
+    
       <FrequencyPicker
         selectedUnit={selectedUnit}
         selectedFrequency={selectedFrequency}
@@ -115,7 +116,8 @@ const App = props => {
         onDietSelect={dietSelectHandler2}
       />
       </animated.div>
-    }</div><br />
+    }
+    </div><br />
     </Col>
      <Col><Diet 
     selectedDiet={selectedDiet}
@@ -126,6 +128,8 @@ const App = props => {
     /></Col>
 </Row>
 </Container>
+<p style={{fontSize: 12, textAlign: "center"}}>Fact-check me, or just say hi! hi@hazelis.online :)</p>
+
     </React.Fragment>
   );
 
