@@ -1,139 +1,159 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import DietPicker from './components/Pickers/DietPicker';
-import Diet from './components/Diet';
-import TimePicker from './components/Pickers/TimePicker'
-import FrequencyPicker from './components/Pickers/FrequencyPicker'
-import UnitPicker from './components/Pickers/UnitPicker'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
-import './components/Input.css'
-import logo from './assets/calculator.png'
-import {useSpring, animated} from 'react-spring'
-
-
+import DietPicker from "./components/Pickers/DietPicker";
+import Diet from "./components/Diet";
+import TimePicker from "./components/Pickers/TimePicker";
+import FrequencyPicker from "./components/Pickers/FrequencyPicker";
+import UnitPicker from "./components/Pickers/UnitPicker";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import "./components/Input.css";
+import logo from "./assets/calculator.png";
+import { useSpring, animated } from "react-spring";
 
 const Home = props => {
   //HOOKS
   const [selectedDiet, setSelectedDiet] = useState("Vegetarian");
   const [selectedDiet2, setSelectedDiet2] = useState("Pescetarian");
-  const [selectedTime, setSelectedTime] = useState('All the time');
+  const [selectedTime, setSelectedTime] = useState("All the time");
   const [selectedFrequency, setSelectedFrequency] = useState(1);
-  const [selectedUnit, setSelectedUnit] = useState('week');
+  const [selectedUnit, setSelectedUnit] = useState("week");
+  const [unitString, setUnitString] = useState("days");
 
-  const [isHidden, setIsHidden] = useState(true);
-  const [unitString, setUnitString] = useState('days');
-
-  useEffect(() => {
-  }, [selectedDiet, selectedTime, selectedFrequency,selectedUnit])
+  useEffect(() => {}, [
+    selectedDiet,
+    selectedTime,
+    selectedFrequency,
+    selectedUnit
+  ]);
 
   const spring = useSpring({
     from: {
       height: 0
-    }, to: {
-      height: isHidden ? 0 : 290
+    },
+    to: {
+      height: selectedTime==="All the time" ? 0 : 290
     }
-  })
-  const dietSelectHandler = event => {
-    const dietId = event.value;
-    setSelectedDiet(dietId);
+  });
+  const selectHandler = event => {
+    const eventValue = event.value;
+    console.log(eventValue)
+    let selectedDiets = [
+      "Vegetarian",
+      "Vegan",
+      "Pescetarian",
+      "Mediterrenean (White meat only)",
+      "Omnivore"
+    ];
+    let selectedTimes = ["All the time", "Sometimes"];
+    let selectedUnits = ["week", "day", "month"];
+    let selectedFrequencies = ["day", "week", "month"];
+    if (selectedDiets.includes(eventValue)) {
+      setSelectedDiet(eventValue);
+    } else if (selectedTimes.includes(eventValue)) {
+      setSelectedTime(eventValue);
+      console.log(selectedTime)
+    } else if (selectedUnits.includes(eventValue)) {
+      setSelectedUnit(eventValue);
+      if (eventValue === "week" || eventValue === "month") {
+        setUnitString("day(s)");
+      } else if (eventValue === "day") {
+        setUnitString("time(s)");
+      }
+    } else if (selectedFrequencies.includes(eventValue)) {
+      setSelectedFrequency(eventValue);
+    }
   };
   const dietSelectHandler2 = event => {
     const dietId = event.value;
     setSelectedDiet2(dietId);
   };
-  const timeSelectHandler = event => {
-    setIsHidden(!isHidden)
-    const time = event.value;
-    setSelectedTime(time);
-  };
-  const frequencySelectHandler = event => {
-    const freq = event.value;
-    setSelectedFrequency(freq);
-  };
-
-  const unitSelectHandler = event => {
-    const unit = event.value;
-    setSelectedUnit(unit);
-    if (unit === "week" || unit === "month") {
-      setUnitString("day(s)")
-    } else if (unit === "day") {
-      setUnitString("time(s)")
-    }
-  };
 
   class Header extends React.Component {
     render() {
-       return (
-          <div class="header">
-        <img src={logo} alt="Logo" /><h3>Food Impact Calculator</h3>
-          </div>
-       );
+      return (
+        <div className="header">
+          <img src={logo} alt="Logo" />
+          <h3>Food Impact Calculator</h3>
+        </div>
+      );
     }
- }
-  
+  }
+
   let content = (
     <React.Fragment>
-            <p><a href="https://hazelis.online" style={{color: "0C6717", fontSize: 11, float: "left"}}>Hire me :^)</a></p>
-<br />
-      <Container>
-      <Row >  
-      <Col>
-      <div className="input">
-      <Header />
+      <p>
+        <a href="https://hazelis.online"
+          style={{ color: "0C6717", fontSize: 11, float: "left" }}>
+          My site :^)
+        </a>
+      </p>
       <br />
-      <h1>I eat...</h1>
-      <DietPicker
-        selectedDiet={selectedDiet}
-        onDietSelect={dietSelectHandler}
-      />
-      <br /> 
-      <TimePicker
-        selectedTime={selectedTime}
-        onTimeSelect={timeSelectHandler}
-      />
-      
-      
-      {!isHidden && <animated.div style={spring }>
-        <hr
-        style={{
-            color: "grey",
-            height: 5,
-            margin: 20
-        }}
-    />
-    
-      <FrequencyPicker
-        selectedUnit={selectedUnit}
-        selectedFrequency={selectedFrequency}
-        onFrequencySelect={frequencySelectHandler}
-      />
-      <h4>{unitString} per</h4>
-      <UnitPicker
-        selectedUnit={selectedUnit}
-        onUnitSelect={unitSelectHandler}
-      />
-      <h4>and the rest of the time I eat...</h4>
-      <DietPicker
-        selectedDiet={selectedDiet2}
-        onDietSelect={dietSelectHandler2}
-      />
-      </animated.div>
-    }
-    </div><br />
-    </Col>
-     <Col><Diet 
-    selectedDiet={selectedDiet}
-    selectedTime={selectedTime}
-    selectedFrequency={selectedFrequency}
-    selectedUnit={selectedUnit}
-    selectedDiet2={selectedDiet2}
-    /></Col>
-</Row>
-</Container><br />
-<p style={{fontSize: 12, textAlign: "center"}}>Fact-check me, or just say hi! hi@hazelis.online :)</p>
+      <Container>
+        <Row>
+          <Col>
+            <div className="input">
+              <Header />
+              <br />
+              <h1>I eat...</h1>
+              <DietPicker
+                selectedDiet={selectedDiet}
+                onDietSelect={selectHandler}
+              />
+              <br />
+              <TimePicker
+                selectedTime={selectedTime}
+                onTimeSelect={selectHandler}
+              />
 
+              {selectedTime==="Sometimes" && (
+                <animated.div style={spring}>
+                  <hr
+                    style={{
+                      color: "grey",
+                      height: 5,
+                      margin: 20
+                    }}
+                  />
+
+                  <FrequencyPicker
+                    selectedUnit={selectedUnit}
+                    selectedFrequency={selectedFrequency}
+                    onFrequencySelect={selectHandler}
+                  />
+                  <h4>{unitString} per</h4>
+                  <UnitPicker
+                    selectedUnit={selectedUnit}
+                    onUnitSelect={selectHandler}
+                  />
+                  <h4>and the rest of the time I eat...</h4>
+                  <DietPicker
+                    selectedDiet={selectedDiet2}
+                    onDietSelect={dietSelectHandler2}
+                  />
+                </animated.div>
+              )}
+            </div>
+            <br />
+          </Col>
+          
+          <Col>
+          <a href="/about" style={{fontSize:12, margin: "0 7.5%"}}>How is this calculated?</a>
+            <Diet
+              selectedDiet={selectedDiet}
+              selectedTime={selectedTime}
+              selectedFrequency={selectedFrequency}
+              selectedUnit={selectedUnit}
+              selectedDiet2={selectedDiet2}
+            />
+          </Col>
+        </Row>
+      </Container>
+      <br />
+      <p style={{ fontSize: 12, textAlign: "center" }}>
+        Fact-check me, or just say hi! hi@hazelis.online :)
+      </p>
     </React.Fragment>
   );
 
