@@ -22,6 +22,7 @@ const DietPicker = props => {
   if (!isLoading && loadedDiets && loadedDiets.length > 0) {
     content = (
       <Select
+        label="DietPicker"
         className={"select"}
         styles={pickerStyle}
         theme={pickerTheme}

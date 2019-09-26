@@ -24,6 +24,7 @@ const FrequencyPicker = props => {
   if (!isLoading && loadedFrequencies && loadedFrequencies.length > 0) {
     content = (
       <Select
+      name="FrequencyPicker"
         styles={pickerStyle}
         theme={pickerTheme}
         onChange={props.onFrequencySelect}

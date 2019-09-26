@@ -1,9 +1,9 @@
 import React from "react";
-
 import "./Summary.css";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+
 import {
   FaIndustry,
   FaWater,
@@ -23,13 +23,12 @@ const Summary = props => {
   const cars = (props.carbon / 1000) * 1109;
   return (
     <div className="summary">
-            <a href="/about" style={{fontSize:12, margin: "0 7.5%"}}>How is this calculated?</a>
       <Container>
         <Row className="summaryRow">
-          <Col md={2}>
+          <Col lg={2} md={1}>
             <FaIndustry color="grey" size={50} />
           </Col>
-          <Col md={10}>
+          <Col lg={10} md={11}>
             <Row><Col>
             <h3 className="summary">
               CO2 saved: 
@@ -63,10 +62,10 @@ const Summary = props => {
            Animal agriculture creates more CO2 emissions than the entire transportation industry - that's cars, trucks, trains, and planes.
         </h4>
         <Row className="summaryRow">
-          <Col xs={2}>
+        <Col lg={2} md={1}>
             <FaWater color="blue" size={45} />
           </Col>
-          <Col xs={10}>
+          <Col lg={10} md={11}>
           <Row><Col>
             <h3>
               Water saved: 
@@ -97,11 +96,11 @@ const Summary = props => {
           (Conservatively!) About 1/3 of the world's fresh water is used for livestock.
         </h4>
         <Row className="summaryRow">
-          <Col xs={2}>
+          <Col lg={2}md={1} >
             {" "}
             <FaTree size={50} color="green" />
           </Col>
-          <Col xs={10}>
+          <Col lg={10} md={11}>
           <Row><Col>
 
             <h3>

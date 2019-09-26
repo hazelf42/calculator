@@ -15,6 +15,8 @@ const UnitPicker = props => {
   if (loadedUnits && loadedUnits.length > 0) {
     content = (
       <Select
+      name="UnitPicker"
+
         className={"select"}
         styles={pickerStyle}
         theme={pickerTheme}

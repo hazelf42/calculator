@@ -17,6 +17,8 @@ const TimePicker = props => {
   if (!isLoading && loadedTimes && loadedTimes.length > 0) {
     content = (
       <Select 
+      name="TimePicker"
+
         onChange={props.onTimeSelect}
         defaultValue={{value: props.selectedTime, label: props.selectedTime}}
         isSearchable={false}
