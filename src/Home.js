@@ -46,22 +46,28 @@ const Home = props => {
       "Mediterrenean (White meat only)",
       "Omnivore"
     ];
+    console.log(typeof(eventValue))
     let selectedTimes = ["All the time", "Sometimes"];
-    let selectedUnits = ["week", "day", "month"];
     let selectedFrequencies = ["day", "week", "month"];
+
     if (selectedDiets.includes(eventValue)) {
       setSelectedDiet(eventValue);
     } else if (selectedTimes.includes(eventValue)) {
+      console.log("diet")
       setSelectedTime(eventValue);
       console.log(selectedTime)
-    } else if (selectedUnits.includes(eventValue)) {
+
+    } else if (selectedFrequencies.includes(eventValue)) {
       setSelectedUnit(eventValue);
+      console.log("frequency")
+
       if (eventValue === "week" || eventValue === "month") {
         setUnitString("day(s)");
       } else if (eventValue === "day") {
         setUnitString("time(s)");
       }
-    } else if (selectedFrequencies.includes(eventValue)) {
+
+    } else if (typeof(eventValue)==="number") {
       setSelectedFrequency(eventValue);
     }
   };

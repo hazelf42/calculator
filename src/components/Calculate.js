@@ -1,6 +1,6 @@
 export function dietToCo2(diet) {
   //let meat = 7.26;
-  let regular = 7.166759; //Medium consumption
+  let regular = 5.93; //Medium consumption
   let pesc = 3.91;
   let med = 4.5; //not accurate, use for now
   let veg = 3.81;
@@ -9,13 +9,14 @@ export function dietToCo2(diet) {
   //Should be a switch statement but I am so tired
 
   if (diet === "Vegetarian") {
-    return Math.round(regular - veg);
+    return regular - veg;
   } else if (diet === "Vegan") {
-    return regular - vegan;
+    return regular - vegan
+
   } else if (diet === "Pescetarian") {
-    return regular - pesc;
+    return regular - pesc
   } else if (diet.split(" ")[0] === "Mediterrenean") {
-    return regular - med;
+    return regular - med
   } else {
     return 0;
   }
