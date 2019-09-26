@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CO2Snippet from "./assets/CO2snippet.png";
 import WaterSnippet from "./assets/watersnippet.png";
 import LandSnippet from './assets/landsnippet.png';
