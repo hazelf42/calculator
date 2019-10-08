@@ -47,7 +47,7 @@ const About = props => {
         </li>
         <li>
           Used mean dietary GHG emissions, because I'm not gonna have a dang
-          drop-down asking for the user's assigned sex...
+          drop-down asking for the user's gender...
         </li>
         <a href="https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data">
           <li>Did-you-know fact source</li>
