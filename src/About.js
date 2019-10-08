@@ -26,7 +26,7 @@ const About = props => {
           These numbers are the iffiest. I use this interchangeably with "low
           meat-eater" although theoretically, a diet low in meat overall but
           high in beef could theoretically emit more CO2 than a high-meat
-          mediterrenean diet. I dunno bruh.
+          mediterrenean diet. ¯\_(ツ)_/¯
         </li>
       </ul>
 
